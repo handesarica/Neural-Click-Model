@@ -16,10 +16,10 @@ class Dataset(object):
         self.data_dir = os.path.join('data', self.dataset)
         self.args = args
         
-        self.train_set = self.load_dataset(os.path.join('data', self.dataset, 'train_per_query_quid.txt'), mode='train')
-        self.valid_set = self.load_dataset(os.path.join('data', self.dataset, 'valid_per_query_quid.txt'), mode='valid')
-        self.test_set = self.load_dataset(os.path.join('data', self.dataset, 'test_per_query_quid.txt'), mode='test')
-        self.label_set = self.load_dataset(os.path.join('data', self.dataset, 'human_label_for_NCM_per_query_quid.txt'), mode='label')
+        self.train_set = self.load_dataset(os.path.join(os.path.dirname(__file__),'data', self.dataset, 'train_per_query_quid.txt'), mode='train')
+        self.valid_set = self.load_dataset(os.path.join(os.path.dirname(__file__),'data', self.dataset, 'valid_per_query_quid.txt'), mode='valid')
+        self.test_set = self.load_dataset(os.path.join(os.path.dirname(__file__),'data', self.dataset, 'test_per_query_quid.txt'), mode='test')
+        self.label_set = self.load_dataset(os.path.join(os.path.dirname(__file__),'data', self.dataset, 'human_label_for_NCM_per_query_quid.txt'), mode='label')
         self.trainset_size = len(self.train_set)
         self.validset_size = len(self.valid_set)
         self.testset_size = len(self.test_set)
